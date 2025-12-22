@@ -1,0 +1,110 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="aiofiles" />
+          <option value="aiogram" />
+          <option value="aiohttp" />
+          <option value="aiosignal" />
+          <option value="amqp" />
+          <option value="annotated-types" />
+          <option value="asgiref" />
+          <option value="async-timeout" />
+          <option value="attrs" />
+          <option value="beautifulsoup4" />
+          <option value="billiard" />
+          <option value="cachetools" />
+          <option value="celery" />
+          <option value="certifi" />
+          <option value="chardet" />
+          <option value="charset-normalizer" />
+          <option value="click" />
+          <option value="click-didyoumean" />
+          <option value="click-plugins" />
+          <option value="click-repl" />
+          <option value="cron-descriptor" />
+          <option value="Deprecated" />
+          <option value="diff-match-patch" />
+          <option value="distro" />
+          <option value="dj-database-url" />
+          <option value="dj-email-url" />
+          <option value="Django" />
+          <option value="django-cache-url" />
+          <option value="django-celery-beat" />
+          <option value="django-ckeditor" />
+          <option value="django-import-export" />
+          <option value="django-jazzmin" />
+          <option value="django-js-asset" />
+          <option value="django-timezone-field" />
+          <option value="environs" />
+          <option value="ffmpeg" />
+          <option value="frozenlist" />
+          <option value="google-auth" />
+          <option value="google-auth-oauthlib" />
+          <option value="googletrans" />
+          <option value="gspread" />
+          <option value="gTTS" />
+          <option value="h11" />
+          <option value="h2" />
+          <option value="hpack" />
+          <option value="hstspreload" />
+          <option value="httpcore" />
+          <option value="httpx" />
+          <option value="hyperframe" />
+          <option value="idna" />
+          <option value="kombu" />
+          <option value="magic-filter" />
+          <option value="marshmallow" />
+          <option value="multidict" />
+          <option value="netaddr" />
+          <option value="numpy" />
+          <option value="oauthlib" />
+          <option value="orjson" />
+          <option value="packaging" />
+          <option value="pandas" />
+          <option value="pillow" />
+          <option value="prompt_toolkit" />
+          <option value="psycopg2-binary" />
+          <option value="pyasn1" />
+          <option value="pyasn1_modules" />
+          <option value="pydantic" />
+          <option value="pydantic_core" />
+          <option value="pydub" />
+          <option value="pytesseract" />
+          <option value="python-crontab" />
+          <option value="python-dateutil" />
+          <option value="python-dotenv" />
+          <option value="pytz" />
+          <option value="redis" />
+          <option value="requests" />
+          <option value="requests-oauthlib" />
+          <option value="rfc3986" />
+          <option value="rsa" />
+          <option value="six" />
+          <option value="sniffio" />
+          <option value="soupsieve" />
+          <option value="SpeechRecognition" />
+          <option value="sqlparse" />
+          <option value="tablib" />
+          <option value="typing_extensions" />
+          <option value="tzdata" />
+          <option value="urllib3" />
+          <option value="vine" />
+          <option value="wcwidth" />
+          <option value="wrapt" />
+          <option value="yarl" />
+          <option value="yookassa" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyStubPackagesAdvertiser" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="djangorestframework" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

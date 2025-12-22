@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 text-center p-4">
+
+                <!-- STATUS -->
+                <h3 class="text-success fw-bold mb-3">
+                    ✅ Sertifikat haqiqiy
+                </h3>
+
+                <hr>
+
+                <!-- QR CODE -->
+                {% if cert.qr_code %}
+                <div class="my-4">
+                    <img
+                        src="{{ cert.qr_code.url }}"
+                        alt="QR Code"
+                        class="img-fluid"
+                        style="max-width: 220px;"
+                    >
+                </div>
+                {% endif %}
+
+                <!-- MA'LUMOTLAR -->
+                <div class="text-start mt-4">
+
+                    <p><strong>Ism:</strong> {{ cert.first_name }}</p>
+                    <p><strong>Familiya:</strong> {{ cert.last_name }}</p>
+                    <p><strong>Otchestva:</strong> {{ cert.father_name }}</p>
+
+                    <hr>
+
+                    <p><strong>Yo‘nalish:</strong> {{ cert.course }}</p>
+
+                    <p>
+                        <strong>O‘qishni boshlagan sana:</strong>
+                        {{ cert.study_start_date|date:"d.m.Y" }}
+                    </p>
+
+                    <p>
+                        <strong>O‘qishni tugatgan sana:</strong>
+                        {{ cert.study_end_date|date:"d.m.Y" }}
+                    </p>
+
+                    <p>
+                        <strong>Sertifikat berilgan sana:</strong>
+                        {{ cert.certificate_given_date|date:"d.m.Y" }}
+                    </p>
+
+                    <hr>
+
+                    <p><strong>Sertifikat ID:</strong> {{ cert.serial }}</p>
+
+                </div>
+
+                <!-- FOOTER -->
+                <div class="mt-4">
+                    <small class="text-muted">
+                        Ushbu sertifikat Joylinks IT Academy tomonidan berilgan va QR kod orqali tekshirildi.
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

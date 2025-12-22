@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- TEXT -->
+            <div class="col-md-6">
+                <h1 class="display-5 fw-bold">
+                    Joylinks IT Academy
+                </h1>
+                <p class="lead mt-3">
+                    Zamonaviy IT kasblarni noldan professional darajagacha o‘rganing.
+                    Amaliy bilim, real loyihalar va rasmiy sertifikatlar.
+                </p>
+
+                <div class="mt-4">
+                    <a href="{% url 'certificate_list' %}" class="btn btn-success btn-lg me-2">
+                        🎓 Sertifikatlar
+                    </a>
+                    <a href="#courses" class="btn btn-outline-light btn-lg">
+                        📚 Kurslar
+                    </a>
+                </div>
+            </div>
+
+            <!-- LOGO / IMAGE -->
+            <div class="col-md-6 text-center">
+                <img
+                    src="/media/joylinks.jpg"
+                    alt="Joylinks logo"
+                    class="img-fluid"
+                    style="max-height: 100px; margin-left: 500px; margin-bottom: 100px;"
+                >
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Nima uchun Joylinks?</h2>
+        <p class="text-muted mb-5">
+            Biz faqat nazariya emas, real IT bozor talablariga mos bilim beramiz.
+        </p>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h3>💻</h3>
+                        <h5 class="fw-bold">Amaliy ta’lim</h5>
+                        <p class="text-muted">
+                            Real loyihalar asosida o‘qitish, portfolio yig‘ish.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h3>👨‍🏫</h3>
+                        <h5 class="fw-bold">Tajribali mentorlar</h5>
+                        <p class="text-muted">
+                            Sanoat tajribasiga ega mutaxassislar bilan ta’lim.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h3>🎓</h3>
+                        <h5 class="fw-bold">Rasmiy sertifikat</h5>
+                        <p class="text-muted">
+                            QR orqali tekshiriladigan, ishonchli sertifikat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COURSES SECTION -->
+<section id="courses" class="py-5">
+    <div class="container">
+        <h2 class="fw-bold text-center mb-5">Mashhur yo‘nalishlar</h2>
+
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card shadow-sm text-center h-100">
+                    <div class="card-body">
+                        <h5>🐍 Python Backend</h5>
+                        <p class="text-muted small">Django, DRF, PostgreSQL</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card shadow-sm text-center h-100">
+                    <div class="card-body">
+                        <h5>⚛ Frontend</h5>
+                        <p class="text-muted small">HTML, CSS, JS, React</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card shadow-sm text-center h-100">
+                    <div class="card-body">
+                        <h5>🗄 Database</h5>
+                        <p class="text-muted small">PostgreSQL, MySQL</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card shadow-sm text-center h-100">
+                    <div class="card-body">
+                        <h5>🚀 DevOps</h5>
+                        <p class="text-muted small">Linux, Docker, Deploy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+        <h2 class="fw-bold">Kelajagingni bugun boshlagin</h2>
+        <p class="lead mt-3">
+            Joylinks bilan IT sohasiga ishonch bilan qadam qo‘y.
+        </p>
+        <a href="{% url 'login' %}" class="btn btn-light btn-lg mt-3">
+            🚀 Boshlash
+        </a>
+    </div>
+</section>
+
+{% endblock %}
