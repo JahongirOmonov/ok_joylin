@@ -41,9 +41,19 @@ def certificate_create(request):
 
 from django.shortcuts import get_object_or_404
 
-def certificate_verify(request, uuid):
-    cert = get_object_or_404(Certificate, uuid=uuid)
-    return render(request, 'certificates/verify.html', {'cert': cert})
+# def certificate_verify(request, uuid):
+#     cert = get_object_or_404(Certificate, uuid=uuid)
+#     return render(request, 'certificates/verify.html', {'cert': cert})
+
+def certificate_verify(request, certificate_id):
+    certificate = get_object_or_404(
+        Certificate,
+        certificate_id=certificate_id
+    )
+
+    return render(request, 'certificates/verify.html', {
+        'cert': certificate
+    })
 
 
 

@@ -28,7 +28,6 @@ class Course(models.Model):
 class Certificate(models.Model):
     serial = models.AutoField(primary_key=True)
 
-    # ✅ QO‘LDA KIRITILADIGAN, MAJBURIY ID
     certificate_id = models.CharField(
         max_length=512,
         unique=True,
@@ -36,31 +35,26 @@ class Certificate(models.Model):
         help_text="Masalan: CERT-2025-001"
     )
 
-    # 🔹 FIO
     first_name = models.CharField(max_length=100, verbose_name="Ismi")
     last_name = models.CharField(max_length=100, verbose_name="Familiyasi")
     father_name = models.CharField(max_length=100, verbose_name="Otasining ismi")
 
-    # 🔹 Yo‘nalish
     course = models.ForeignKey(
         Course,
         on_delete=models.PROTECT,
         verbose_name="Bitirgan yo‘nalishi"
     )
 
-    # 🔹 Ustoz
     teacher = models.ForeignKey(
         Teacher,
         on_delete=models.PROTECT,
         verbose_name="Ustoz"
     )
 
-    # 🔹 SANALAR
     study_start_date = models.DateField(verbose_name="O‘qishni boshlagan sana")
     study_end_date = models.DateField(verbose_name="O‘qishni tugatgan sana")
     certificate_given_date = models.DateField(verbose_name="Sertifikat berilgan sana")
 
-    # 🔹 QR
     qr_code = models.ImageField(
         upload_to='qr/',
         blank=True,
@@ -68,19 +62,16 @@ class Certificate(models.Model):
         verbose_name="QR kod"
     )
 
-    # 🔹 Texnik
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
-        # ❗ Sertifikat ID majburiy
         if not self.certificate_id:
             raise ValueError("Sertifikat ID majburiy!")
 
-        # 1️⃣ Avval OBYEKTNI SAQLAYMIZ
+        is_new = self.pk is None
         super().save(*args, **kwargs)
 
-        # 2️⃣ QR faqat 1 marta yaratiladi
-        if not self.qr_code:
+        if is_new and not self.qr_code:
             verify_url = f"{settings.SITE_URL}/certificates/verify/{self.certificate_id}/"
 
             qr = qrcode.make(verify_url)
@@ -88,7 +79,7 @@ class Certificate(models.Model):
             qr.save(buffer, format='PNG')
 
             self.qr_code.save(
-                f"certificate_{self.serial}.png",
+                f"certificate_{self.certificate_id}.png",
                 File(buffer),
                 save=False
             )

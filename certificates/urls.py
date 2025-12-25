@@ -6,5 +6,5 @@ urlpatterns = [
     path('', home_page, name='home_page'),
     path('certificates/list/', certificate_list, name='certificate_list'),
     path('create/', certificate_create, name='certificate_create'),
-    path('certificates/verify/<uuid:uuid>/', certificate_verify, name='certificate_verify'),
+    path('certificates/verify/<str:certificate_id>/', certificate_verify, name='certificate_verify'),
 ]
